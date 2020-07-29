@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
-}
+*{transition:all 0.3s ease-in-out;}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo-brand {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.logo-brand>img {
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  /* background-image: linear-gradient(-90deg, rgba(255, 252, 87, 0.37), rgba(255, 244, 97, 0.267)); */
+  overflow: auto;
+  border-radius: 5px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  align-items: center;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navigation links */
+.navbar a {
+  float: left;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  text-decoration: none ;
+  font-size: 22px;
+  width: 16.66%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
+  /* display: block */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Add a background color on mouse-over */
+.navbar a:hover {
+  background-color: rgba(255, 123, 0, 0.288);
+  text-transform: uppercase;
+}
+
+/* Style the current/active link */
+.navbar a.active {
+  background-color: rgba(255, 123, 0, 0.288);
+}
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+    transition: all 0.3s ease 0;
   }
 }
+
+.form {
+  text-align: center;
+  border: beige;
+  border-radius: 15px;
+  background-color: rgba(252, 139, 0, 0.11);
+  width: 100%;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 100px;
+  background-image: linear-gradient( to bottom right, rgba(255, 255, 0, 0.055), rgba(50, 38, 107, 0.411));
+}
+
+.form input[type=text]:focus {
+  background-color: beige;
+}
+
+.submit {
+  border: ivory;
+  border-radius: 15px;
+  background-color: rgba(184, 221, 184, 0.664); 
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-self: center;
+  background-color: linear-gradient(-90deg, rgba(59, 51, 107, 0.37), rgba(0, 174, 255, 0.411));
+  border-radius: 12px;
+  border: 1px solid beige;
+  padding: 10px;
+  font-size: 17px;
+  text-align: center;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 0fr));
+}
+
+.container-2 {
+  display: grid;
+  /* align-items: center; */
+
+  /* flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 0fr) );
+  text-align: center;
+  padding: 5px; */
+} 
+
+.page {
+  background-color: #fffab8;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+}
+
+.league {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-self: center;
+
+}
+
+.league-2 {
+  display: inline-grid;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 0fr) );
+  text-align: center;
+  align-self: center;
+}
+
+.team {
+  display: block;
+  flex-direction: column;
+  justify-content: space-around;
+  color: rgb(3, 0, 0)
+}
+
+*{
+  margin: 0;
+  padding: 0;
+ }
+ 
+ html{
+     width: 100vw;
+     height: 100vh;
+ }
+ 
+ /* CSS which you need for blurred box */
+ body{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  /* background-image: url(https://wallpaperaccess.com/full/1278406.png); */
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica;
+  letter-spacing: 0.02em;
+   font-weight: 400;
+  -webkit-font-smoothing: antialiased; 
+ }
+ 
+ .blurred-box{
+   position: relative;
+   width: 250px;
+   height: 350px;
+   top: calc(50% - 175px);
+   left: calc(50% - 125px);
+   background: inherit;
+   border-radius: 2px;
+   overflow: hidden;
+ }
+ 
+ .blurred-box:after{
+  content: '';
+  width: 300px;
+  height: 300px;
+  background: inherit; 
+  position: absolute;
+  left: -25px;
+  left: position;
+  right: 0;
+  top: -25px;  
+  top: position;
+  bottom: 0;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+  filter: blur(10px);
+ }
+ 
+ 
+ /* Form which you dont need */
+ .user-login-box{
+   position: relative;
+   margin-top: 50px;
+   text-align: center;
+   z-index: 1;
+ }
+ .user-login-box > *{
+   display: inline-block;
+   width: 200px;
+ }
+ 
+ .user-icon{
+   width: 100px;
+   height: 100px;
+   position: relative;
+   border-radius: 50%;
+   background-size: contain;
+   background-image: url(https://pbs.twimg.com/profile_images/725321660484583424/ArQ4fM3k.jpg);
+ }
+ 
+ .user-name{
+   margin-top: 15px;
+   margin-bottom: 15px;
+   color: white;
+ }
+ 
+ input.user-password{
+   width: 120px;
+   height: 18px;
+   opacity: 0.4;
+   border-radius: 2px;
+   padding: 5px 15px;
+   border: 0;
+ }
